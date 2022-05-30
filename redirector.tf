@@ -75,3 +75,7 @@ resource "null_resource" "init_redirector" {
     }
   }
 }
+
+output "redirectors_ips" {
+  value = ["${aws_instance.ec2_redirector.*.public_ip}"]
+}
